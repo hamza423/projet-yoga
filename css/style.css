@@ -1,0 +1,388 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+header, footer, .categorie {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+header {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  padding: 5px;
+  transition-duration: 0.5s;
+}
+
+a {
+  color: white;
+  margin-top: 32px;
+  text-decoration: none;
+  margin-right: 20px;
+  font-family: "Voltaire", sans-serif;
+  font-size: 16px;
+}
+
+h1, h3, h4 {
+  color: #927397;
+  margin-top: 64px;
+  font-family: "Voltaire", sans-serif;
+  font-size: 40px;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Voltaire", sans-serif;
+}
+
+h2 {
+  color: white;
+  font-family: "Voltaire", sans-serif;
+}
+
+div {
+  margin-top: 64px;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+  margin-top: 16px;
+}
+
+.slideShow {
+  overflow: hidden;
+  margin-top: 0;
+}
+
+.slideShow ul {
+  width: 400%;
+  height: 200px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.slideShow li {
+  float: left;
+}
+
+.slogan_call_to_action {
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  color: white;
+  text-align: center;
+}
+.slogan_call_to_action > p {
+  font-size: 40px;
+  cursor: default;
+}
+.slogan_call_to_action > a {
+  color: white;
+  border: 2px solid white;
+  padding: 16px 32px;
+  background: transparent;
+  display: inline-flex;
+}
+
+/***************PARTIE DU MAIN**********************/
+.categorie {
+  width: 100%;
+  margin: 0 auto;
+  width: 1280px;
+  margin-right: 19%;
+}
+.categorie > div {
+  width: 16.6666666667%;
+  text-align: center;
+}
+.categorie > div > p, .categorie > div a {
+  margin-left: 99px;
+}
+.categorie > div > a {
+  color: black;
+  border: 2px solid black;
+  padding: 16px 32px;
+  background: transparent;
+  display: inline-flex;
+  transition-duration: 1s;
+  transition-property: background, color;
+  margin-bottom: 64px;
+}
+.categorie > div > a:hover {
+  background: black;
+  color: white;
+}
+
+.text_sophrologie {
+  position: absolute;
+  top: 155%;
+  left: 5%;
+  color: white;
+}
+.text_sophrologie > a {
+  color: white;
+  border: 2px solid white;
+  padding: 16px 32px;
+  background: transparent;
+  display: inline-flex;
+}
+
+.presentation {
+  margin: 0 auto;
+  width: 1280px;
+  text-align: center;
+}
+.presentation > a {
+  color: black;
+  border: 2px solid black;
+  padding: 16px 32px;
+  background: transparent;
+  display: inline-flex;
+  transition-duration: 1s;
+  transition-property: background, color;
+  margin-bottom: 64px;
+}
+.presentation > a:hover {
+  background: black;
+  color: white;
+}
+
+.commentaire {
+  position: absolute;
+  top: 245%;
+  left: 14%;
+  text-align: center;
+}
+.commentaire > p {
+  color: white;
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 5%;
+  right: 3%;
+  cursor: pointer;
+  display: none;
+}
+
+/***************PAGE DE CONTACT*********************/
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 1280px;
+  justify-content: space-between;
+  text-align: center;
+}
+.contact > form {
+  width: 41.6666666667%;
+}
+
+label {
+  display: table;
+  font-family: "Voltaire", sans-serif;
+  color: #927397;
+}
+
+input[type=text] {
+  width: 80%;
+  padding: 10px;
+  display: block;
+}
+
+textarea {
+  width: 80%;
+  padding: 10px;
+  display: block;
+  height: 20%;
+}
+
+label, input[type=text] {
+  margin-top: 16px;
+}
+
+input[type=submit] {
+  color: black;
+  border: 2px solid black;
+  padding: 16px 32px;
+  background: transparent;
+  display: inline-flex;
+  transition-duration: 1s;
+  transition-property: background, color;
+  display: block;
+}
+input[type=submit]:hover {
+  background: black;
+  color: white;
+}
+
+.grayscale div img {
+  background: grayscale(100%);
+  filter: grayscale(100%);
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.grayscale div:hover img {
+  background: grayscale(0);
+  filter: grayscale(0);
+}
+
+/*********CONTACT************/
+.return {
+  display: none;
+}
+
+.return span {
+  display: block;
+  width: 400px;
+  padding: 5px;
+  text-align: center;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  color: #FFF;
+}
+
+.return .error {
+  background-color: #e74c3c;
+}
+
+.return .success {
+  background-color: #27ae60;
+}
+
+.captcha {
+  margin-bottom: 16px;
+}
+
+.map, .formulaire {
+  margin-top: 7%;
+}
+
+/************PAGE HORAIRES ET TARIFS****************/
+.horaire {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 auto;
+  width: 1280px;
+  background-color: #927397;
+  padding: 1%;
+  border-radius: 15px;
+}
+
+table {
+  border-collapse: collapse;
+  font-family: "Voltaire", sans-serif;
+  width: 100%;
+  border: 2px solid black;
+  text-align: center;
+}
+table > tr:nth-of-type(1) {
+  border: 2px solid black;
+}
+
+.price_horaire {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 1280px;
+  justify-content: space-between;
+}
+.price_horaire > table {
+  width: 30%;
+  margin-top: 64px;
+}
+.price_horaire > a {
+  color: black;
+  border: 2px solid black;
+  padding: 16px 32px;
+  background: transparent;
+  display: inline-flex;
+  transition-duration: 1s;
+  transition-property: background, color;
+}
+.price_horaire > a:hover {
+  background: black;
+  color: white;
+}
+
+td tr {
+  border: 2px solid black;
+}
+
+/*****************PAGE DU CENTRE***********************/
+.centre {
+  margin: 0 auto;
+  width: 1280px;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: space-between;
+}
+
+@media all and (max-width: 900px) {
+  .slider {
+    display: none;
+  }
+
+  header {
+    position: static;
+    background-color: black;
+  }
+
+  .slogan_call_to_action {
+    display: none;
+  }
+
+  .categorie {
+    width: 100%;
+  }
+  .categorie > div {
+    width: 50%;
+  }
+
+  .text_sophrologie {
+    top: 188%;
+    left: 5%;
+    text-align: center;
+  }
+
+  .commentaire {
+    top: 293%;
+    left: 0%;
+  }
+
+  .picture_sophrologie {
+    width: 100%;
+  }
+
+  .presentation {
+    width: 100%;
+  }
+
+  footer {
+    width: 100%;
+    padding: 5px;
+  }
+}
+@media all and (max-width: 390px) {
+  .categorie {
+    width: 100%;
+  }
+  .categorie > div {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

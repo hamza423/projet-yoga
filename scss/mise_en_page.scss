@@ -1,0 +1,323 @@
+@import "mise_en_forme.scss";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $open;
+}
+header, footer ,.categorie {
+    @include flex;
+    justify-content: space-between;
+}
+header{
+    position: fixed;
+    z-index: 1000;
+    @include col-12;
+    padding: 5px;
+    transition-duration: 0.5s;
+}
+
+a{
+    color: white;
+    margin-top: 32px;
+    text-decoration: none;
+    margin-right: 20px; 
+    font-family: $voltaire;
+    font-size: $a_btn;
+}
+h1, h3, h4 {
+    color: $violet;
+    margin-top: 64px;
+    font-family: $voltaire;
+    font-size: $titre;
+}
+h1{
+    text-align: center;
+    font-family: $voltaire;
+}
+h2{
+    color: white;
+    font-family: $voltaire;
+}
+div{
+    margin-top: 64px;
+}
+p {
+    font-family: $open;
+    margin-top: 16px;
+}
+.slideShow{
+    overflow: hidden;
+    margin-top: 0;
+}
+.slideShow ul {
+    width: 400%;
+    height: 200px;
+    padding:0;
+    margin: 0;
+    list-style: none;
+}
+.slideShow li {
+    float: left;
+}
+.slogan_call_to_action{
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    color: white;
+    text-align: center;
+    &>p{
+        font-size: $titre;
+        cursor: default;
+    }
+    &>a{
+        @include button_blanc;
+    }
+}
+/***************PARTIE DU MAIN**********************/
+//CATEGORIE
+.categorie{
+    @include col-12;
+    @include container;
+    margin-right:19%;
+    &>div{
+        @include col-2;
+        text-align: center;
+        &>p,a{
+            margin-left: 99px; 
+        }
+        &>a{
+            @include button_noir;
+            margin-bottom: 64px;
+        }
+    }
+}
+
+//PRESENTATION SOPHROLOGIE
+.text_sophrologie{
+    position: absolute;
+    top: 155%;
+    left: 5%;
+    color: white;
+    &>a{
+        @include button_blanc;
+    }
+}
+
+//PRESENTATION DE L'ENTREPRISE
+.presentation{
+    @include container;
+    text-align: center;
+    &>a{
+        @include button_noir;
+        margin-bottom: 64px;
+    }
+}
+
+//LE POSITIONNEMENT DU COMMENTAIRE
+.commentaire{
+    position: absolute;
+    top: 245%;
+    left: 14%;
+    text-align: center;
+    &>p{
+        color: white;
+    }
+}
+
+//LE RETOUR AU HEADER
+#backToTop{
+    position: fixed;
+    bottom: 5%;
+    right: 3%;
+    cursor: pointer;
+    display: none;
+}
+
+/***************PAGE DE CONTACT*********************/
+
+//STRUCTURATION DE LA PAGE CONTACT
+.contact{
+    @include flex;
+    @include container;
+    justify-content: space-between;
+    text-align: center;
+    &>form {
+        @include col-5;
+    }
+}
+
+//MISE EN FORME DES LABELS
+label{
+    display: table;
+    font-family: $voltaire;
+    color: $violet;
+
+}
+//MISE EN FORME DES INPUT
+input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    display: block;
+}
+textarea{
+    width: 80%;
+    padding: 10px;
+    display: block;
+    height: 20%;
+}
+//ESPACEMENT ENTRE LES LABELS ET LES INPUTS
+label, input[type="text"] {
+    margin-top: 16px;
+}
+//MISE EN FORME DU BUTTON SUBMIT
+input[type="submit"] {
+    @include button_noir;
+    display: block;
+}
+//ANIMATION CATEGORIE NOIR ET BLANC
+.grayscale div img {
+	background: grayscale(100%);
+	filter: grayscale(100%);
+	transition: .3s ease-in-out;
+        cursor: pointer;
+}
+.grayscale div:hover img {
+	background: grayscale(0);
+	filter: grayscale(0);
+}
+
+/*********CONTACT************/ 
+
+//MESSAGE AJAX
+.return{
+    display: none;
+}
+
+.return span{
+    display: block;
+    width:400px;
+    padding:5px;
+    text-align: center;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    color:#FFF;
+}
+.return .error{
+    background-color: #e74c3c;
+}
+.return .success{
+
+    background-color: #27ae60;
+
+}
+//CAPTCHA
+.captcha{
+    margin-bottom: 16px;
+}
+//MAP
+.map, .formulaire{
+    margin-top: 7%;
+}
+
+/************PAGE HORAIRES ET TARIFS****************/
+
+//STRUCTURATION DE LA PAGE HORAIRE ET TARIFS
+.horaire{
+    @include flex;
+    justify-content: space-around;
+    @include container;
+    background-color: #927397;
+    padding: 1%;
+    border-radius: 15px;
+}
+//MISE EN FORM DU TABLEAU DES HORARIRES
+table{
+  border-collapse: collapse;
+  font-family: $voltaire;
+  width: 100%;
+  border: 2px solid black;
+  text-align: center;
+  &>tr:nth-of-type(1){
+      border: 2px solid black;
+  }
+}
+//STRUCTURATION DES CARTES DE PRIX POUR LES 
+.price_horaire {
+  width: 100%;
+  @include flex;
+  @include container;
+  justify-content:space-between;
+  &>table{
+      width: 30%;
+      margin-top: 64px;
+  }
+  &>a{
+      @include button_noir;
+  }
+}
+
+td tr {
+      border: 2px solid black;
+  }
+  
+/*****************PAGE DU CENTRE***********************/
+.centre{
+    @include container;
+    @include flex;
+    text-align: center;
+    justify-content: space-between;
+}
+
+//Mediaquery
+
+@media all and (max-width : 900px){
+    .slider{
+        display: none;
+    }
+    header{
+        position: static;
+        background-color: black;
+    }
+    .slogan_call_to_action{
+        display: none;
+    }
+    .categorie{
+        width: 100%;
+        &>div{
+            width: 50%;
+        }
+    }
+    .text_sophrologie{
+        top: 188%;
+        left: 5%;
+        text-align: center;
+    }
+    .commentaire{
+        top:293%;
+        left: 0%;
+    }
+    .picture_sophrologie{
+        width: 100%;
+    }
+    .presentation{
+        width: 100%;
+    }
+    footer{
+        width: 100%;
+        padding: 5px;
+    }
+}
+
+@media all and(max-width:390px){
+    .categorie{
+            width: 100%;
+            &>div{
+                width: 100%;
+            }
+        }
+    }
