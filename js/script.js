@@ -76,10 +76,22 @@ $(document).ready(function(){
 
 /******SLIDER*******/
 
-$(function(){
-   setInterval(function(){
-      $(".slideShow ul").animate({marginLeft:-350},800,function(){
-         $(this).css({marginLeft:0}).find("li:last").after($(this).find("li:first"));
-      })
-   }, 3500);
-});
+        i = 0;
+        var images = ['img/slider.png', 'img/slider2.png', 'img/slider3.png'];
+        var time = 7000;
+        
+        function imageChange(){
+            document.slide.src = images[i];
+            
+            if(i < images.length -1) {
+                i++;
+            }else{
+                i = 0;
+            }
+            
+            setTimeout("imageChange()", time);
+        }
+        
+        window.onload = imageChange;
+        
+
